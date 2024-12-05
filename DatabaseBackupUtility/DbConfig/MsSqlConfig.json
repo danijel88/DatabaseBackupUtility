@@ -1,0 +1,12 @@
+{
+  "Server": "172.27.73.200",
+  "Database": "3DBook",
+  "UserId": "sa",
+  "Password": "sqladmin",
+  "Port": "1433",
+  "StorageLocation": "D:\\Backups\\",
+  "BackupName": "db.bak" ,
+  "RestoreDbName": "NewDbName",
+  "RestoreMdfPath": "",
+  "RestoreLdfPath": ""
+}

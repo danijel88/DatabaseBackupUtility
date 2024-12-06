@@ -20,8 +20,7 @@ The Database Backup Utility is a versatile tool designed to simplify the process
 * Prepare Configuration file:
   - Modify a MsSqlConfig.json file which can be found inside of folder DbConfig
   - Example of MsSqlConfig.json
-`
-{
+`{
   "Server": "xxx.xxx.xxx.xxx",
   "Database": "dbName",
   "UserId": "user id",
@@ -32,9 +31,7 @@ The Database Backup Utility is a versatile tool designed to simplify the process
   "RestoreDbName": "NewDbName",
   "RestoreMdfPath": "",
   "RestoreLdfPath": ""
-}
-
-`
+}`
 * Run the tool:
   - Open a command line interface and navigate to directory containng DatabaseBackupUtility.Exe
   - Exectue commands to preform backups or restores

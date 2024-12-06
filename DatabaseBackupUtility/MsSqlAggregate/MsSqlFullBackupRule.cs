@@ -23,9 +23,9 @@ public class MsSqlFullBackupRule : DatabaseRule
             return;
         }
 
-        if (proxy.WithCompression.ToLower() == "y")
+        if (!string.IsNullOrEmpty(proxy.WithCompression))
         {
-            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; GO" +
+            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()};  " +
                                  $" BACKUP DATABASE {MsSqlConfigData.GetDatabaseName()} TO " +
                                  $"DISK='{MsSqlConfigData.GetStorageLocation()}\\{MsSqlConfigData.GetBackupName()}' WITH FORMAT,COMPRESSION, " +
                                  $"MEDIANAME='{MsSqlConfigData.GetDatabaseName()}', " +
@@ -33,11 +33,12 @@ public class MsSqlFullBackupRule : DatabaseRule
         }
         else
         {
-            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; GO" +
+            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()};  " +
                           $" BACKUP DATABASE {MsSqlConfigData.GetDatabaseName()} TO " +
                           $"DISK='{MsSqlConfigData.GetStorageLocation()}\\{MsSqlConfigData.GetBackupName()}' WITH FORMAT, " +
                           $"MEDIANAME='{MsSqlConfigData.GetDatabaseName()}', " +
                           $"NAME = 'Full backup of {MsSqlConfigData.GetDatabaseName()}'";
+            
         }
 
 

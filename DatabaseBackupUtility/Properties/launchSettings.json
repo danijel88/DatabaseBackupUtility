@@ -2,7 +2,7 @@
   "profiles": {
     "DatabaseBackupUtility": {
       "commandName": "Project",
-      "commandLineArgs": "--provider mssql --action backup --backupType full "
+      "commandLineArgs": "--provider mssql --action backup --backupType full"
     }
   }
 }

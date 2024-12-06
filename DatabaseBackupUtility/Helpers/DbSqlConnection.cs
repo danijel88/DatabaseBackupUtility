@@ -8,14 +8,22 @@ public class DbSqlConnection
     public void RunQuery(string query)
     {
         var connectionString = GetConnectionString();
-        SqlConnection connection = new SqlConnection(connectionString);
-        connection.Open();
-        SqlCommand command = new SqlCommand(query, connection);
-        var result = command.ExecuteNonQuery();
-        command.Dispose();
-        connection.Dispose();
-        connection.Close();
-        
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
     }
 
     public async Task<bool> TestConnection()

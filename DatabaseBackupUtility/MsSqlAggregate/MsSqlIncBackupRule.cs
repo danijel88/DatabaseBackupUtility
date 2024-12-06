@@ -25,19 +25,21 @@ public class MsSqlIncBackupRule : DatabaseRule
 
         if (proxy.WithCompression.ToLower() == "y")
         {
-            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; GO" +
-                          $" BACKUP LOG {MsSqlConfigData.GetDatabaseName()} TO " +
+            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; " +
+                          $"BACKUP LOG {MsSqlConfigData.GetDatabaseName()} TO " +
                           $"DISK='{MsSqlConfigData.GetStorageLocation()}\\{MsSqlConfigData.GetBackupName()}' WITH COMPRESSION , " +
                           $"MEDIANAME='{MsSqlConfigData.GetDatabaseName()}', " +
                           $"NAME = 'Log-backup of {MsSqlConfigData.GetDatabaseName()}'";
+            
         }
         else
         {
-            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; GO" +
-                          $" BACKUP LOG {MsSqlConfigData.GetDatabaseName()} TO " +
+            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; " +
+                          $"BACKUP LOG {MsSqlConfigData.GetDatabaseName()} TO " +
                           $"DISK='{MsSqlConfigData.GetStorageLocation()}\\{MsSqlConfigData.GetBackupName()}' WITH COMPRESSION , " +
                           $"MEDIANAME='{MsSqlConfigData.GetDatabaseName()}', " +
                           $"NAME = 'Log-backup of {MsSqlConfigData.GetDatabaseName()}'";
+            
         }
 
 

@@ -25,7 +25,7 @@ public class MsSqlDiffBackupRule : DatabaseRule
 
         if (proxy.WithCompression.ToLower() == "y")
         {
-            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; GO" +
+            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; " +
                           $" BACKUP DATABASE {MsSqlConfigData.GetDatabaseName()} TO " +
                           $"DISK='{MsSqlConfigData.GetStorageLocation()}\\{MsSqlConfigData.GetBackupName()}' WITH DIFFERENTIAL,COMPRESSION " +
                           $"MEDIANAME='{MsSqlConfigData.GetDatabaseName()}', " +
@@ -33,7 +33,7 @@ public class MsSqlDiffBackupRule : DatabaseRule
         }
         else
         {
-            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; GO" +
+            backupQuery = $"USE {MsSqlConfigData.GetDatabaseName()}; " +
                           $" BACKUP DATABASE {MsSqlConfigData.GetDatabaseName()} TO " +
                           $"DISK='{MsSqlConfigData.GetStorageLocation()}\\{MsSqlConfigData.GetBackupName()}' WITH DIFFERENTIAL, " +
                           $"MEDIANAME='{MsSqlConfigData.GetDatabaseName()}', " +

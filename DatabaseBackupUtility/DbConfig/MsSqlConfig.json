@@ -1,8 +1,8 @@
 {
-  "Server": "172.27.73.200",
-  "Database": "3DBook",
-  "UserId": "sa",
-  "Password": "sqladmin",
+  "Server": "xxx.xxx.xxx.xxx",
+  "Database": "dbName",
+  "UserId": "user id",
+  "Password": "uer passwrod",
   "Port": "1433",
   "StorageLocation": "D:\\Backups\\",
   "BackupName": "db.bak" ,

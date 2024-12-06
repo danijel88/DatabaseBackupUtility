@@ -49,4 +49,6 @@ The Database Backup Utility is a versatile tool designed to simplify the process
 ## Restore
 To restore your database from backup(do not forget to populate config file otherwise restore will not be done):
 `DatabaseBackupUtility.exe --provider mssql --action restore`
-
+## Next Steps
+- Uploading to cloud backup
+- Adding other DBMS providers
